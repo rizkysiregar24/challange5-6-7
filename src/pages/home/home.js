@@ -12,7 +12,7 @@ import { getAllMovies } from "../../redux/actions/movieActions";
 const Home = ({token}) => {
     const dispatch =useDispatch()
     const { movies } = useSelector((state) => state.movie);
-
+    
 
     useEffect(() => {
         

@@ -7,9 +7,9 @@ const [searchResult, setSearchResult] = useState(null);
 console.log(searchResult)
 const [searchParams, setSearchParams] = useSearchParams();
 
-const query = searchParams.get("q");
+const query = searchParams.get("query");
 
-const SEARCH_MOVIE_URL = `https://api.themoviedb.org/3/search/movie?api_key= 4154ff81a5f8bae0d54b1f74964cf7db&query=${query}&include_adult=false`;
+const SEARCH_MOVIE_URL = `https://api.themoviedb.org/3/search/movie?api_key=4154ff81a5f8bae0d54b1f74964cf7db&query=${query}&include_adult=false`;
 
 useEffect(() => {
   const getData = async () => {
@@ -20,6 +20,12 @@ useEffect(() => {
   getData();
 }, [query]);
 
+return(
+  <div className="search">
+    {JSON.stringify(searchResult)}
+  </div>
+)
+
 }
 
-export default Search
+export default Search;
